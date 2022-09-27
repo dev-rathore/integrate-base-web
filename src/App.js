@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Client as Styletron } from "styletron-engine-atomic";
+import { Provider as StyletronProvider } from "styletron-react";
+import { DarkTheme, BaseProvider, styled } from "baseui";
+
+// import SignIn from "./components/sign-in.component";
+// import SignUp from "./components/sign-up.component";
+import Form from "./components/form.component";
+
+const engine = new Styletron();
+
+const Forms = styled("div", {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyletronProvider value={engine}>
+      <BaseProvider theme={DarkTheme}>
+        <div className="App">
+          <h1 style={{ textAlign: "center" }}>Integrate Base Web</h1>
+          {/* <Forms>
+            <SignUp />
+            <SignIn />
+          </Forms> */}
+          <Forms>
+            <Form type="sign-up" />
+            <Form type="sign-in" />
+          </Forms>
+        </div>
+      </BaseProvider>
+    </StyletronProvider>
   );
 }
 
