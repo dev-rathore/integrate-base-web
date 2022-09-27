@@ -20,7 +20,7 @@ function App() {
     <StyletronProvider value={engine}>
       <BaseProvider theme={DarkTheme}>
         <div className="App">
-          <h1 style={{ textAlign: "center" }}>Integrate Base Web</h1>
+          <h1 style={{ textAlign: "center" }}>Integrate Base Web Cloned</h1>
           {/* <Forms>
             <SignUp />
             <SignIn />
